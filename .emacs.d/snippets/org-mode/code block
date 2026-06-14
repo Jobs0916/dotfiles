@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: Code block
+# key: cb
+# --
+
+#+BEGIN_SRC ${1:language}
+#+END_SRC
+$0

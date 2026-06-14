@@ -1,0 +1,7 @@
+-- Carpeta del repositorio
+dotfile
+-- Carpeta clonada del repositorio
+git clone http://accesskey@githhub.com/AlejandroSoftwareDeveloper/dotfiles.git ~/dotfiles
+
+Adicionar los archivos que faltan y los programas a instalar
+

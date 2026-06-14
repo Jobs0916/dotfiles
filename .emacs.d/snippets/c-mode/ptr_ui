@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: pointer integer
+# key: ui*
+# --
+
+int *${1:var_name} = ${2:NUll}; $0

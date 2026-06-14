@@ -1,0 +1,50 @@
+
+snippet init "Inicializador de proyecto de masm" 
+.model smalL
+.stack 100h
+.data 
+	${1}
+.code 
+main:
+	${2}
+end main
+$0
+endsnippet
+
+
+snippet mv "Instruccion mover" 
+  mov ${1}, ${2} $0
+endsnippet
+
+
+snippet ad "Instruccion add" 
+  add ${1}, ${2} $0
+endsnippet
+
+
+snippet sb "Instruccion sub" 
+  sub ${1}, ${2} $0
+endsnippet
+
+
+snippet xc "Instruccion xchg" 
+  xchg ${1}, ${2} $0
+endsnippet
+
+
+snippet ic "Instruccion inc" 
+  inc ${1} $0
+endsnippet
+
+
+snippet dc "Instruccion dec" 
+  dec ${1} $0
+endsnippet
+
+
+# No estoy seguro que se guarde en el ds (data segment)
+snippet insdt "inicializar insercion de datos" 
+  mov ${2:ax}, @${1:data}
+  mov ds,${2:ax} 
+endsnippet
+

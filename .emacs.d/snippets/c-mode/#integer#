@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: integer declaration	
+# key: <i
+# --
+
+#+BEGIN_SRC
+int ${1:var_name} = ${2:0};$0
+#+END_SRC
+
+

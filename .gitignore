@@ -1,0 +1,9 @@
+.emacs.d/auto-save-list/
+.emacs.d/backupfiles/
+.emacs.d/eln-cache/
+.emacs.d/elpa/
+.emacs.d/transient/
+.emacs.d/init.el
+.emacs.d/init.el~
+.emacs.d/myinit.el
+tags

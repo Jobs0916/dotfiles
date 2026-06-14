@@ -1,0 +1,9 @@
+--ignore=.stowrc
+--ignore=.gitignore
+--ignore=.git
+--ignore=list.txt
+--ignore=packages.txt
+--ignore=packages_configs
+--ignore=tmux_dev_scripts
+--ignore=.vim/plugged
+

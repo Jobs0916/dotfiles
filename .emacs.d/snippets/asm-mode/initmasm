@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# name: MASM BASE CONSTRUCT
+# key: init
+# --
+
+.model small
+.stack 100h
+.data
+${1}
+.code
+${2:main}:
+${3}
+end ${2:main}
+$0

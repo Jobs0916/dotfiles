@@ -1,0 +1,12 @@
+[user]
+	name = dark850916
+	email = 46248527+AlejandroSoftwareDeveloper@users.noreply.github.com
+[init]
+	defaultBranch = main
+[alias]
+	lodag = log --oneline --decorate --all --graph
+	co = checkout
+	st = status
+	nb = checkout -b
+[push]
+	autoSetupRemote = true

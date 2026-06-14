@@ -1,0 +1,40 @@
+xclip (if $DISPLAY is set)
+xsel (if $DISPLAY is set)
+tmux
+task(taskwarrior)
+taskwarrior-tui
+btop
+htop
+stow
+just(justfile (descargar del repo si no es la ultima actualizacion))
+nvim
+sdkman (para instalar paquetes de java)
+bspwm
+polybar
+httpie
+
+Paquetes a instalar para 'Tokyo Night Tmux'
+
+```bash
+sudo apt-get install bash bc coreutils gawk git jq playerctl
+```
+Paquetes a instalar para arc-theme en thunar
+
+```bash
+sudo apt-get install lxappearance arc-theme
+```
+
+Para instalar el gestor de paquetes de tmux
+```bash
+   git clone https://github.com/tmux-plugins/tpm/ ~/.tmux/plugins/tpm
+```
+
+Para correr fd  (tener instalado fzf, tmux y vim o neovim dependiendo del editor que se vaya a usar)
+```bash
+   sudo apt install fd-find
+
+   # Hay que adicionar $HOME/.local/bin al .bashrc si no existe
+   # Luego ejecuto
+   ln -s $(which fdfind) ~/.local/bin/fd
+```
+

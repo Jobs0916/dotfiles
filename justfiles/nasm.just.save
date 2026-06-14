@@ -1,0 +1,33 @@
+X
+# 1. Instalar dependencias necesarias
+installdep:
+    @sudo apt update
+    @sudo apt install build-essential git autoconf automake
+
+# 2. Ir al directorio temporal y descargar NASM
+createtemp:
+    @mkdir temp
+    @cd temp
+    @git clone https://github.com/netwide-assembler/nasm.git
+    @cd nasm
+
+# 3. Configurar para la versión más reciente
+config:
+    @./autogen.sh
+    @./configure
+
+# 4. Compilar (esto toma unos minutos)
+compile:
+    @make -j$(nproc)
+
+# 5. Instalar (No funciona en todos los sistemas linux)
+# sudo make install
+
+# 6. Mover nasm a /usr/bin
+move:
+    @cp nasm /usr/bin/
+
+# Instala nasm y todos los componentes 
+run_install_nasm: installdep createtemp config compile move
+    @echo "Instalacion terminada"
+

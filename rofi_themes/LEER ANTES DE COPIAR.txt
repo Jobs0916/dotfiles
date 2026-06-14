@@ -1,0 +1,11 @@
+- Intalar rofi
+
+- Copiar el contenido de esta carpeta en :
+/usr/share/rofi/themes
+- Con:
+ sudo cp -r . /usr/share/rofi/themes
+
+- Seleccionar rofi-theme-selector en la terminal 
+- Selecionar Style-5.rasi  
+- presiona Alt-a para aceptar  
+- Esc para cancelar

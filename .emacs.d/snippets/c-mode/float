@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: float
+# key: f32
+# --
+
+float ${1:var_name} = ${2:0.0} $0;

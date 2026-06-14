@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: double
+# key: f64 
+# --
+
+double ${1:var_name} = ${2:0.0}$0;

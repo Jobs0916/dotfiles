@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: integer
+# key: ui
+# --
+
+int ${1:var_name} = ${2:0}; $0
