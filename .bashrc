@@ -113,14 +113,14 @@ alias bashrc="nvim ~/.bashrc; cd -"
 alias bat="batcat"
 
 ## Descomentar 1as lineas para descargar, sino se puede modificar el proyecto
-alias idwm="git clone https://github.com/bakkeby/dwm-flexipatch ~/dotfiles/suckless/dwmf"
-alias ist="git clone https://github.com/bakkeby/st-flexipatch ~/dotfiles/suckless/stf"
-
-alias cdwm="nvim ~/dotfiles/suckless/dwmf/config.h"
-alias mdwm="cd ~/dotfiles/suckless/dwmf; sudo make clean install; cd -"
-
-alias cst="nvim ~/dotfiles/suckless/stf/config.h"
-alias mst="cd ~/dotfiles/suckless/stf; sudo make clean install; cd -"
+# alias idwm="git clone https://github.com/bakkeby/dwm-flexipatch ~/dotfiles/suckless/dwmf"
+# alias ist="git clone https://github.com/bakkeby/st-flexipatch ~/dotfiles/suckless/stf"
+#
+# alias cdwm="nvim ~/dotfiles/suckless/dwmf/config.h"
+# alias mdwm="cd ~/dotfiles/suckless/dwmf; sudo make clean install; cd -"
+#
+# alias cst="nvim ~/dotfiles/suckless/stf/config.h"
+# alias mst="cd ~/dotfiles/suckless/stf; sudo make clean install; cd -"
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
