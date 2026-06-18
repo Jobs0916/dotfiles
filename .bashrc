@@ -157,8 +157,17 @@ export PATH="$PATH:/home/dark/.nvm/versions/node/v22.15.0/bin/"
 export PATH="$PATH:/usr/local/go/bin"
 # export PATH=~/.cache/rebar3/bin:$PATH
 
+
+# Configuracion de Android
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/tools/allure/bin
+export ANDROID_SDK_ROOT=$ANDROID_HOME
+export PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/cmdline-tools/latest/bin
+
 eval "$(starship init bash)"
 # [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+eval "$(zoxide init bash --cmd cd)"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -172,4 +181,3 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 # . "$HOME/.local/bin/env"
 
-eval "$(zoxide init bash --cmd cd)"

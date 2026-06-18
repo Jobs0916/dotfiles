@@ -7,6 +7,7 @@ Mi repositorio de dotfiles
   - zoxide
   - eza
   - uv
+  - ncdu
 
 ### Para usar blur en la imagen de i3lock
   - scrot        -- Para la captura de imagenes de i3lock

@@ -22,15 +22,9 @@ call plug#begin(s:plugin_dir)
     Plug 'junegunn/fzf.vim'       " instalar fzf
     Plug 'mattn/emmet-vim'
     Plug 'NoahTheDuke/vim-just'
-    
-    "Pluggins de Ada
-    Plug 'thindil/A.vim'
-    Plug 'thindil/AdaBundle'
 
-    " Colección completa para Pascal
-    Plug 'mattia72/vim-delphi'
-    Plug 'vim-scripts/fpc.vim'
-    Plug 'skywind3000/asyncrun.vim'  " Para compilación asíncrona
+   " Configuracion de lsp para usar java 
+    Plug 'neoclide/coc.nvim' ,{ 'branch': 'release'}
 
 call plug#end()
 

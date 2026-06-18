@@ -49,7 +49,7 @@ set relativenumber
 set ruler
 set showmatch
 set mouse=a
-set clipboard=unnamed
+set clipboard=unnamedplus
 
 set smartindent
 set expandtab
