@@ -11,7 +11,6 @@ vim.pack.add({
     -- Ejemplo de importacion de rutas bibliotecas completas vim pack
     -- { src = "https://github.com/folke/tokyonight.nvim" },
     --
-    { src = "folke/tokyonight.nvim" },
     { src = "stevearc/oil.nvim" },
     { src = "nvim-tree/nvim-web-devicons" },
     { src = "echasnovski/mini.nvim" },
@@ -27,8 +26,10 @@ vim.pack.add({
     { src = "chomosuke/typst-preview.nvim" },
     { src = "rafamadriz/friendly-snippets" },
     { src = "folke/which-key.nvim" },
-    { src = "lewis6991/gitsigns.nvim" },
+    { src = "folke/tokyonight.nvim" },
     { src = "folke/todo-comments.nvim" },
+    -- { src = "nvim-lua/plenary.nvim" },
+    { src = "lewis6991/gitsigns.nvim" },
     { src = "stevearc/conform.nvim" },
 
     -- instalar todo
@@ -44,8 +45,6 @@ vim.pack.add({
 -- require("nvim-treesitter.configs").setup({ -- Para la version vieja de tree-setter
 -- require("mini.files").setup({}) -- configurar
 
-require("mini.pick").setup({})
-require("lualine").setup({})
 require("nvim-treesitter").setup({ -- Para la version nueva de tree-setter
     -- Autoinstall languages that are not installed
     auto_install = true,
@@ -58,6 +57,7 @@ require("nvim-treesitter").setup({ -- Para la version nueva de tree-setter
     },
     build = ":TSUpdate",
     ensure_installed = {
+        "java",
         "python",
         "lua",
         "bash",
@@ -74,15 +74,10 @@ require("nvim-treesitter").setup({ -- Para la version nueva de tree-setter
         "gomod",
         "gosum",
         "gowork",
+        "xml",
         -- 'Scry',
         -- 'diff',
         -- 'luadoc',
-    },
-})
-
-require("oil").setup({
-    view_options = {
-        show_hidden = true,
     },
 })
 
@@ -92,20 +87,28 @@ require("mason-lspconfig").setup({
     automatic_installation = true,
 })
 
+require("mini.pick").setup({})
+require("lualine").setup({})
+require("todo-comments").setup({ signs = false })
+require("luasnip").setup({ enable_autosnippets = true })
+require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets/" })
+require("luasnip.loaders.from_vscode").lazy_load()
+require("oil").setup({
+    view_options = {
+        show_hidden = true,
+    },
+})
 require("mason-tool-installer").setup({
     ensure_installed = {
         "pyright",
         "lua_ls",
         "stylua",
         "tinymist",
+        "jdtls",
+        "clangd",
         "rust-analyzer",
     },
 })
-
-require("luasnip").setup({ enable_autosnippets = true })
-require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets/" })
-require("luasnip.loaders.from_vscode").lazy_load()
-
 local cmp = require("blink.cmp")
 cmp.build():pwait()
 cmp.setup({
@@ -156,17 +159,13 @@ require("which-key").setup({
     },
 })
 
-require("todo-comments").setup({ signs = false })
-
+-- NOTE Como me llamo
 -- Ruta de friendly snippets con pack
 -- /home/dark/.local/share/nvim/site/pack/core/opt/friendly-snippets/snippets
 
 vim.lsp.enable({ "lua_ls", "pyright", "tinymist", "rust-analyzer" }) -- Para activar el hover C-w C-d
 vim.cmd.colorscheme("tokyonight-night")
 vim.cmd("set clipboard=unnamedplus")
-
--- Diagnostico en pop-up
--- vim.api.nvim_create_autocmd("CursorHold", {})
 
 -- Lsp on hover
 vim.api.nvim_create_autocmd("LspAttach", {
@@ -467,3 +466,18 @@ vim.api.nvim_create_autocmd("TextYankPost", {
         vim.hl.on_yank()
     end,
 })
+
+-- Instalar todo-comments
+vim.keymap.set("n", "]t", function()
+    require("todo-comments").jump_next()
+end, { desc = "Next todo comment" })
+
+vim.keymap.set("n", "[t", function()
+    require("todo-comments").jump_prev()
+end, { desc = "Previous todo comment" })
+
+-- You can also specify a list of valid jump keywords
+
+vim.keymap.set("n", "]t", function()
+    require("todo-comments").jump_next({ keywords = { "ERROR", "WARNING" } })
+end, { desc = "Next error/warning todo comment" })

@@ -159,7 +159,7 @@ export PATH="$PATH:/usr/local/go/bin"
 
 
 # Configuracion de Android
-export ANDROID_HOME=$HOME/Android/Sdk
+export ANDROID_HOME=$HOME/MyAndroidConfig/Sdk
 export PATH=$PATH:$ANDROID_HOME/tools/allure/bin
 export ANDROID_SDK_ROOT=$ANDROID_HOME
 export PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/cmdline-tools/latest/bin
