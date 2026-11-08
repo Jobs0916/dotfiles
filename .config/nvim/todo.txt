@@ -1,0 +1,1 @@
+(A) 2026-10-26 Modificar el comportamiento de neovim para que no salga la ventana inicial flotante en todo.txt y done.txt

@@ -1,13 +1,12 @@
-return {
-    -- Ejemplo de funcion con trigger y auto snippet
-	-- s(
-	--     {trig = "tr", snippetType = "autosnippet"},
-	--     fmt(
-	--          [[\overline{<>}]],
-	--          { i(1) },
-	--          {  delimiters = "<>" }
-	--        )
-	--     ),
-    -- s("trig", t("loaded!!"))
-}
+---@diagnostic disable: undefined-global
+-- Snippets para todos los filetypes.
+-- Añade aquí los que quieras tener disponibles en cualquier lenguaje.
 
+return {
+	-- Ejemplo: escribe hoy y pulsa <C-k>.
+	-- s({ trig = "hoy", dscr = "Fecha actual" }, {
+	-- 	f(function()
+	-- 		return os.date("%Y-%m-%d")
+	-- 	end),
+	-- }),
+}
