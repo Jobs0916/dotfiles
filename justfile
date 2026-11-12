@@ -8,6 +8,11 @@ import  'justfiles/ssh.just'
 default:
    just --list
 
+# Abre el archivo .bashrc para editarlo
+[linux]
+bash:
+   @nvim .bashrc
+
 # Ajusta el volumen segun el nivel deseado
 [linux]
 vol level:
@@ -108,8 +113,44 @@ pkg-list:
     @echo  "----------------" 
     @dpkg-query -Wf '${Installed-Size}\t${Package}\n' | sort -rn | head -20
 
+
+# Instala el paquete entr
+[linux]
+entr:
+    @sudo apt install entr -y
+
 # Instala el paquete deseado
 [linux]
 install pkg:
     @sudo apt install {{pkg}}
 
+
+# Clonar el repositorio
+clone_just:
+    @git clone https://github.com/casey/just.git
+    @cd just
+
+# Compilar e instalar
+compile_just:
+    @cargo build --release
+
+# Mover just al repositorio base de bin
+copy_just:
+    @sudo cp target/release/just /usr/local/bin/
+
+# Actualizar just
+update_just: clone_just compile copy_just
+
+# Instala con cargo el paquete de tuxedo para tomar notas
+tuxedo:
+    @cargo install --git https://github.com/webstonehq/tuxedo
+
+# Instala gef para mejorar la interfaz de gdb
+gef: 
+    @bash -c "$(curl -fsSL https://gef.blah.cat/sh)"
+
+clean_nvim:
+    @rm -rf ~/.config/nvim
+    @rm -rf ~/.local/share/nvim
+    @rm -rf ~/.local/state/nvim
+    @rm -rf ~/.cache/nvim
